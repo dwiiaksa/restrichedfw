@@ -25,16 +25,16 @@ async def check(userbot, client, link):
             await userbot.get_messages(chat, msg_id)
             return True, None
         except ValueError:
-            return False, "**Invalid Link!**"
+            return False, "**Tautan Tidak Valid!**"
         except Exception:
-            return False, "Have you joined the channel?"
+            return False, "Sudahkah Anda bergabung dengan saluran tersebut?"
     else:
         try:
             chat = str(link.split("/")[-2])
             await client.get_messages(chat, msg_id)
             return True, None
         except Exception:
-            return False, "Maybe bot is banned from the chat, or your link is invalid!"
+            return False, "Mungkin bot dilarang dari obrolan, atau tautan Anda tidak valid!"
             
 async def get_msg(userbot, client, sender, edit_id, msg_link, i):
     edit = ""
@@ -56,18 +56,18 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
                     await client.send_message(sender, msg.text.markdown)
                     await edit.delete()
                     return
-            edit = await client.edit_message_text(sender, edit_id, "Trying to Download.")
+            edit = await client.edit_message_text(sender, edit_id, "Mencoba Mendownload.")
             file = await userbot.download_media(
                 msg,
                 progress=progress_for_pyrogram,
                 progress_args=(
                     client,
-                    "**DOWNLOADING:**\n",
+                    "**Download:**\n",
                     edit,
                     time.time()
                 )
             )
-            await edit.edit('Preparing to Upload!')
+            await edit.edit('Bersiap untuk Mengunggah!')
             caption = str(file)
             if msg.caption is not None:
                 caption = msg.caption
