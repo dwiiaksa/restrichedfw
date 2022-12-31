@@ -22,7 +22,7 @@ from pyrogram.errors import FloodWait
 from ethon.pyfunc import video_metadata
 from ethon.telefunc import force_sub
 
-ft = f"To use this bot you've to join @{fs}."
+ft = f"Untuk menggunakan bot ini Anda harus bergabung @{fs}."
 
 batch = []
 
@@ -44,13 +44,13 @@ async def _batch(event):
         return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!")
     async with Drone.conversation(event.chat_id) as conv: 
         if s != True:
-            await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
+            await conv.send_message("Kirimi saya tautan pesan tempat Anda ingin mulai menyimpan, sebagai balasan untuk pesan ini.", buttons=Button.force_reply())
             try:
                 link = await conv.get_reply()
                 try:
                     _link = get_link(link.text)
                 except Exception:
-                    await conv.send_message("No link found.")
+                    await conv.send_message("Tautan tidak ditemukan.")
             except Exception as e:
                 print(e)
                 return await conv.send_message("Cannot wait more longer for your response!")
