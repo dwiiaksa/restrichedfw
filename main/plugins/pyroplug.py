@@ -99,7 +99,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
                 await bot.send_file(sender, file, caption=caption)
             else:
                 thumb_path=thumbnail(sender)
-                await client.send_video(
+                await client.send_document(
                     sender,
                     file, 
                     caption=caption,
