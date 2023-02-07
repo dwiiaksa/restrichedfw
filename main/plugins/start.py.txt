@@ -1,0 +1,33 @@
+#Github.com/Vasusen-code
+
+import os
+from .. import bot as Drone
+from telethon import events, Button
+
+from ethon.mystarts import start_srb
+    
+S = '/' + 's' + 't' + 'a' + 'r' + 't'
+
+ def start_pannel():
+    buttons = [
+        [
+            InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/lucarlossxstore"),
+            InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url=f"https://t.me/AskaraNotAksara"),
+        ],
+        [
+            InlineKeyboardButton("🌐 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 🌐", url=f("https://github.com/vasusen-code/SaveRestrictedContentBot"),
+        ],
+    ]
+    return (
+        "🎛 **{BOT_NAME} Merupakan salah satu dari bot telegram yang bisa mengambil konten di channel/grup terkunci forwardnya**",
+        buttons,
+    )
+
+
+pstart_markup = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/AskaraNotAksara"),
+        ],
+    ]
+)
